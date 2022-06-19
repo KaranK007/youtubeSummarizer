@@ -136,4 +136,4 @@ def index():
 
 # server the app when this file is run
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
