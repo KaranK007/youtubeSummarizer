@@ -9,4 +9,7 @@ The problem that this project attempts to solve is saving time by gathering and 
 The need for the project is clearly visible as in today's world, people rarely get time for activities such as reading and increasing their knowledge. Moreover watching lengthy videos can become boring. Therefore, in order to save time and do all such things in the shortest time possible while keeping the learning part in place, this project will deliver it all.
 I plan to develop the project using Flask(python's web framework) for the backend and Html for a simple frontend.
 
+# Project Execution
 
+![Screenshot (571)](https://user-images.githubusercontent.com/78258729/175284731-009739a0-d18f-4aa1-b6a4-6d141a701856.png)
+![Screenshot (580)](https://user-images.githubusercontent.com/78258729/175284745-83e59ec8-7dfb-48a0-b0e6-3e90e42b445e.png)
