@@ -15,6 +15,3 @@ I plan to develop the project using Flask(python's web framework) for the backen
 ![Screenshot (580)](https://user-images.githubusercontent.com/78258729/175284745-83e59ec8-7dfb-48a0-b0e6-3e90e42b445e.png)
 
 
-# Dear FutureReady/Internship Evaluators
-
-Since past few days I am having trouble in making the deployed website work properly although the app is working fine on my local host server(shown in the above pictures). I tried various methods of deployment and approached future ready helpdesk for guidance but still no full proof solution was achieved. As it is high time now and the deadline of project submission is near, I am submitting the project. I sincerely apologize for any inconvenience caused by me. 
