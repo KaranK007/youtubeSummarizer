@@ -6,9 +6,16 @@
     <title>Text Summarization</title>
 </head>
 <body>
+    <h1>Youtube Subscript Sumarizer</h1>
+    <p>Enter the URL of the video you would like to summarize.</p>
     <form method="POST">
         <input type = "text" name="url" id = "url">
-        <input type = "submit" name="submit" id = "submit">
+        <input type = "submit" name="submit" id = "submit" onclick = "msg()">
     </form>
+    <script>
+    function msg() {
+        alert("Press confirm and please wait while the summary is being generated ");
+    }
+    </script>
 </body>
 </html>
