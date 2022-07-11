@@ -138,4 +138,4 @@ def index():
 
 # server the app when this file is run
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',debug = true)
