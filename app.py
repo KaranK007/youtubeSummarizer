@@ -31,26 +31,25 @@ def generateTranscript(videoId):
     for t in transcript.fetch():
         paragraph += t['text']
         paragraph += " "
-    #print(len(paragraph))
-    model = T5ForConditionalGeneration.from_pretrained("t5-base")
+    print(len(paragraph))
+    '''model = T5ForConditionalGeneration.from_pretrained("t5-base")
     # initialize the model tokenizer
     tokenizer = T5Tokenizer.from_pretrained("t5-base")
-    inputs = tokenizer.encode("summarize: " + paragraph, return_tensors="pt", max_length=1024, truncation=True)
+    inputs = tokenizer.encode("summarize: " + paragraph, return_tensors="pt", max_length=512, truncation=True)
 
     outputs = model.generate(
     inputs, 
-    max_length=500, 
-    min_length=200, 
-    length_penalty=2.0, 
-    num_beams=4, 
-    early_stopping=True)
+    max_length=200, 
+    min_length=150, 
+    length_penalty=5., 
+    num_beams=2,)
     # just for debugging
     #print(outputs)
     ret = str(tokenizer.decode(outputs[0]))
-    print(ret)
-    return(ret)
     
-    '''summarizer = pipeline('summarization')
+    return(ret)'''
+    
+    summarizer = pipeline('summarization')
     num_iters = int(len(paragraph)/1000)
     summarized_text = []
     for i in range(0, num_iters + 1):
@@ -58,12 +57,15 @@ def generateTranscript(videoId):
         start = i * 1000
         end = (i + 1) * 1000
         # print("input text \n" + result[start:end])
-        out = summarizer(paragraph[start:end],min_length=30,max_length=100)
+        out = summarizer(paragraph[start:end],min_length=20,max_length=50)
         out = out[0]
         out = out['summary_text']
         #print("Summarized text\n"+out)
         summarized_text.append(out)
-    print(summarized_text)'''
+
+    
+    print(len(str(summarized_text)))
+    return(str(summarized_text))
     
     
     
@@ -92,10 +94,10 @@ def generateTranscript(videoId):
 def generate_Summary(paragraph):
     
     # initialize the model architecture and weights
-    model = T5ForConditionalGeneration.from_pretrained("t5-base")
+    '''model = T5ForConditionalGeneration.from_pretrained("t5-base")
     # initialize the model tokenizer
     tokenizer = T5Tokenizer.from_pretrained("t5-base")
-    inputs = tokenizer.encode("summarize: " + paragraph, return_tensors="pt", max_length=1024, truncation=True)
+    inputs = tokenizer.encode("summarize: " + paragraph, return_tensors="pt", max_length=512, truncation=True)
 
     outputs = model.generate(
     inputs, 
@@ -108,9 +110,9 @@ def generate_Summary(paragraph):
     #print(outputs)
     ret = list(tokenizer.decode(outputs[0]))
     print(ret)
-    return(ret)
+    return(ret)'''
 
-    '''summarizer = pipeline('summarization')
+    summarizer = pipeline('summarization')
     num_iters = int(len(paragraph)/1000)
     summarized_text = []
     for i in range(0, num_iters + 1):
@@ -122,9 +124,9 @@ def generate_Summary(paragraph):
         out = out[0]
         out = out['summary_text']
         #print("Summarized text\n"+out)
-        summarized_text.append(out)'''
+        summarized_text.append(out)
 
-    
+    return str(summarized_text)
 
 @app.route("/", methods = ["GET", "POST"])
 def index():
